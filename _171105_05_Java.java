@@ -10,17 +10,21 @@ public class _171105_05_Java {
         int width = 3*n+6;
         int height = 3+n+1;
         String empty = String.join("", Collections.nCopies(n," "));
-        steam(n, width, "~", empty);
+        steam(n, width, "~");
         upDownHandle(width,"=");
     }
 
 
-    static void steam(int in, int width, String symbol, String a) {
+    static void steam(int in, int width, String symbol) {
         //int br = (in-6)/3;
         for(int i=1; i<=in; i++) {
-            System.out.println(a);
-            for (int j = 1 ;  j<=in ; j++) {
-                System.out.print(symbol + " ");
+
+            for (int j = 1 ;  j<=width ; j++) {
+                if(j>in && j<=in+3) {
+                    System.out.print(symbol + " ");
+                } else {
+                    System.out.print(" ");
+                }
             }
 
             System.out.println("");
