@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Scanner;
 
 public class _171105_05_Java {
@@ -6,16 +7,19 @@ public class _171105_05_Java {
         Scanner in = new Scanner(System.in);
 
         int n = in.nextInt();
-
-        steam(n, "~");
-        upDownHandle(n,"=");
+        int width = 3*n+6;
+        int height = 3+n+1;
+        String empty = String.join("", Collections.nCopies(n," "));
+        steam(n, width, "~", empty);
+        upDownHandle(width,"=");
     }
 
 
-    static void steam(int in, String symbol) {
-
+    static void steam(int in, int width, String symbol, String a) {
+        //int br = (in-6)/3;
         for(int i=1; i<=in; i++) {
-            for (int j = in ; j <=in+3 ; j++) {
+            System.out.println(a);
+            for (int j = 1 ;  j<=in ; j++) {
                 System.out.print(symbol + " ");
             }
 
@@ -24,9 +28,9 @@ public class _171105_05_Java {
 
     }
 
-    static void upDownHandle(int in, String symbol) {
+    static void upDownHandle(int width, String symbol) {
 
-        for (int i = 1; i <=in-1 ; i++) {
+        for (int i = 1; i <=width-1 ; i++) {
             System.out.print(symbol);
         }
     }
